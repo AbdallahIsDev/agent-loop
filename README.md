@@ -42,12 +42,18 @@ This system exploits that. You make **one API call**, the agent runs for hours o
 npm install -g infinity-loop
 ```
 
-Or from source:
+Or from source (private repo):
 
-```bash
-git clone https://github.com/YOUR_USER/infinity-loop.git
-cd infinity-loop
-npm link
+```powershell
+git clone https://github.com/AbdallahIsDev/agent-loop.git
+cd agent-loop
+powershell -ExecutionPolicy Bypass .\install.ps1
+```
+
+Verify:
+
+```powershell
+loop init --help
 ```
 
 ## Usage
