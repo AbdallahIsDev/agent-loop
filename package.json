@@ -1,0 +1,13 @@
+{
+  "name": "infinity-loop",
+  "version": "1.0.0",
+  "description": "Infinite loop system for AI agents — single API call, never stops, file-based communication",
+  "bin": {
+    "loop": "./bin/loop.js"
+  },
+  "files": [
+    "bin/",
+    "templates/"
+  ],
+  "license": "MIT"
+}
