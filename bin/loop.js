@@ -12,9 +12,10 @@ function main() {
   const cmd = args[0];
 
   if (cmd !== "init") {
-    console.error("Usage: loop init [--path <dir>]");
+    console.error("Usage: loop init [--path <dir>] [--force]");
     console.error("       loop init              # scaffold in current dir");
     console.error("       loop init --path <dir>  # scaffold at specified dir");
+    console.error("       loop init --force       # overwrite existing .loop/");
     process.exit(1);
   }
 
@@ -23,12 +24,13 @@ function main() {
     install();
   }
 
+  const force = args.includes("--force");
   const pathFlagIndex = args.indexOf("--path");
   const targetDir = pathFlagIndex !== -1 && args[pathFlagIndex + 1]
     ? path.resolve(args[pathFlagIndex + 1])
     : process.cwd();
 
-  init(targetDir);
+  init(targetDir, force);
 }
 
 function install() {
@@ -112,12 +114,17 @@ function copyRecursive(src, dest, exclude = []) {
   }
 }
 
-function init(targetDir) {
+function init(targetDir, force) {
   const loopDir = path.join(targetDir, ".loop");
 
   if (fs.existsSync(loopDir)) {
-    console.error(`Error: ${loopDir} already exists.`);
-    process.exit(1);
+    if (force) {
+      fs.rmSync(loopDir, { recursive: true, force: true });
+    } else {
+      console.error(`Error: ${loopDir} already exists.`);
+      console.error("  Use --force to overwrite with fresh templates.");
+      process.exit(1);
+    }
   }
 
   const projectName = path.basename(targetDir);

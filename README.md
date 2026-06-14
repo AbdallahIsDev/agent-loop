@@ -23,11 +23,11 @@ Cross-platform. One clone. One setup. Zero dependencies beyond Node.js.
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│  Copy README.loop.md → paste into Codex (one API call)  │
+│  Copy README.loop.md → paste into Codex (one API call)   │
 └─────────────────────┬────────────────────────────────────┘
                       │
                       ▼
-┌──────────────────────────────────────────────────────────┐
+┌───────────────────────────────────────────────────────────┐
 │                   INFINITE LOOP                           │
 │                                                           │
 │  while true:                                              │
@@ -41,7 +41,7 @@ Cross-platform. One clone. One setup. Zero dependencies beyond Node.js.
 │    if general task → move to COMPLETED.md                 │
 │    rewrite STATUS.md (heartbeat + progress + tracker)     │
 │    loop forever                                           │
-└──────────────────────────────────────────────────────────┘
+└───────────────────────────────────────────────────────────┘
 ```
 
 ## The 8 Files
