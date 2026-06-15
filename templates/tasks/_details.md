@@ -1,26 +1,44 @@
 # Task Details: {{TASK_ID}} — {{TASK_TITLE}}
 
 ## Sub-tasks
-Agent processes these in order. Mark each as done after completion.
-When all sub-tasks are done, the main task is complete.
-
----
+Process these in order. Mark each as done after completion.
 
 - [ ] Sub-task 1: (description)
 - [ ] Sub-task 2: (description)
 - [ ] Sub-task 3: (description)
 
 ## Working Memory
-Agent writes progress here during execution. Survives context compaction.
+Key findings, decisions, partial state. Survives context compaction.
 
-### Session Notes
-(agent writes key findings, decisions, partial state here)
+(Session notes here)
+
+---
+
+## Transaction Tracking
+Files being modified in this task. Update as you go.
+
+| File | Change | Status |
+|------|--------|--------|
+| (path) | (brief change) | pending/done |
+
+---
+
+## Testing
+- Test command: (e.g. `npm test`)
+- Edge cases to verify: (list)
+- Manual verification needed: Yes/No
+
+---
+
+## Self-Review
+After implementation, answer:
+1. Satisfies requested behavior? [Yes/No]
+2. Fits existing architecture? [Yes/No]
+3. Hidden risks? [None/Describe]
 
 ---
 
 ## Completion Log
-
-After each sub-task, log what was done:
 
 ```
 **What was done:**
@@ -29,4 +47,5 @@ After each sub-task, log what was done:
 - Why: [reasoning]
 - Tests run: [which ones, results]
 - Tests skipped: [why]
+- Git commit: [hash or "N/A"]
 ```

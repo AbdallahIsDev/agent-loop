@@ -2,17 +2,19 @@
 
 This file defines the project boundaries. Agent MUST stay within this scope.
 
-## What This Project Is
+## In Scope
+(List each feature/capability that IS part of this project)
+- [Feature 1: one-line description]
+- [Feature 2: one-line description]
 
-[Describe your project's purpose, core functionality, and target users]
+## Out of Scope (DO NOT BUILD)
+(List features explicitly NOT part of this project)
+- [Feature that is rejected]
 
 ## Architecture Constraints
-
 - [Key architecture decisions]
 - [Tech stack rules]
 - [What NOT to change]
 
-## Out of Scope (DO NOT BUILD)
-
-- [Features that are explicitly not part of this project]
-- [Things to reject even if asked]
+## Scope Drift Log
+(Agent logs any detected scope drift here with cycle number and task ID)
