@@ -71,6 +71,36 @@ Cross-platform. One clone. One setup. Zero dependencies beyond Node.js.
 
 **QUEUED INSTRUCTIONS** — Processed one at a time. Agent takes first, completes it, removes it. Next cycle, next instruction becomes first.
 
+## Investigation Protocol
+
+Every problem must be:
+1. **Reproduced** — confirm it exists
+2. **Verified** — is it real?
+3. **Marked** — VERIFIED REAL / PARTIAL / FALSE POSITIVE / OUTDATED / FIXED
+
+## Quality Standards
+
+- **No scaffolding** — never fake implementations, placeholders, or hacks
+- **No parallel systems** — improve existing architecture
+- **If you find an improvement** — implement it. Do not get lazy. Hard improvements now prevent bigger problems later.
+
+## Skills
+
+Agent auto-applies: **code-review** (after every fix), **security-review** (auth/secrets/permissions), **design** (UI/dashboard/styling).
+
+## Completion Log Format
+
+After each task, log using:
+
+```
+**What was done:**
+- Files modified: [list]
+- What changed: [description]
+- Why: [reasoning]
+- Tests run: [which ones, results]
+- Tests skipped: [why]
+```
+
 ## License
 
 MIT

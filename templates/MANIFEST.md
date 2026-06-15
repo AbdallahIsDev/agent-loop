@@ -20,3 +20,43 @@
 12. **Preserve ALL user data.** Never delete sessions, DBs, configs, runtime artifacts.
 13. **Self-audit** runs every 10 idle cycles. No limit on tasks generated.
 14. **If stuck** on same task for 5+ cycles → write blocker to QA.md, move to next task.
+
+## Investigation Protocol
+
+Before marking any problem as fixed:
+
+1. **Reproduce** the problem first. Confirm it exists.
+2. **Verify if real.** Not every reported issue is valid.
+3. **Mark clearly** with one of:
+   - `VERIFIED REAL` — confirmed, needs fixing
+   - `PARTIAL` — partly true, partly not
+   - `FALSE POSITIVE` — not an actual issue
+   - `OUTDATED` — was real, already resolved by other work
+   - `FIXED` — confirmed resolved
+
+## Quality Standards
+
+- **Never scaffold** fake implementations, placeholders, hacks, or incomplete systems.
+- **Do not create parallel systems.** Improve existing architecture.
+- **If you find something** that will improve the project now or in the future (scaling, reliability, security, UX), implement it. Do not get lazy. Do not skip it because it's hard work. Hard improvements now prevent bigger problems later.
+
+## Skills
+
+Apply these automatically when relevant:
+
+- **code-review** — after every fix, review your own work
+- **security-review** — for any security, auth, secrets, permissions changes
+- **design** — for UI, frontend, dashboard, styling changes
+
+## Documentation Format
+
+After completing any task, log the work in the task detail file or STATUS.md using:
+
+```
+**What was done:**
+- Files modified: [list]
+- What changed: [description]
+- Why: [reasoning]
+- Tests run: [which ones, results]
+- Tests skipped: [why]
+```
