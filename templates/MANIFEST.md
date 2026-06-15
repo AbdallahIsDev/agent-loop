@@ -20,6 +20,7 @@
 12. **Preserve ALL user data.** Never delete sessions, DBs, configs, runtime artifacts.
 13. **Self-audit** runs every 10 idle cycles. No limit on tasks generated.
 14. **If stuck** on same task for 5+ cycles → write blocker to QA.md, move to next task.
+15. **Do not trust documented solutions blindly.** If a task has a pre-written Solution section, brainstorm your own approach. Compare. If yours is better, use yours. If the documented one is best, use that. Always verify.
 
 ## Investigation Protocol
 

@@ -28,7 +28,9 @@ Absolute rules:
 - INBOX.md is never fully cleared — only individual instructions are removed
 - Write critical questions to QA.md, then continue working (never block)
 - DECISIONS.md is reference-only; read when a task references it
-- No task is too big. Break into sub-tasks in `.loop/tasks/` if needed.
+- No task is too big. Break into sub-tasks in `.loop/tasks/<id>-details.md` if needed.
+- If a QUEUE.md entry has a Solution section: brainstorm your own approach first. Compare. Use the better one. Never trust blindly.
+- Log completion using the Documentation Format from MANIFEST.md.
 
 Below are the current .loop/ files for this project:
 ============================================================
