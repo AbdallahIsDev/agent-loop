@@ -31,7 +31,7 @@ Cross-platform. One clone. One setup. Zero dependencies beyond Node.js.
 │                   INFINITE LOOP                           │
 │                                                           │
 │  while true:                                              │
-│    read CHECKPOINT.md (context recovery)                  │
+│    read MISSION.md (role reminder), CHECKPOINT.md (state) │
 │    read MANIFEST.md, SCOPE.md                             │
 │    check INBOX.md HIGH PRIORITY → execute immediately     │
 │    check INBOX.md QUEUED → take first, do it, remove it   │
@@ -47,16 +47,17 @@ Cross-platform. One clone. One setup. Zero dependencies beyond Node.js.
 └───────────────────────────────────────────────────────────┘
 ```
 
-## The 9 Files
+## The 10 Files
 
 | File | Read Every Cycle | Purpose |
 |------|:-:|---------|
-| `CHECKPOINT.md` | Yes | Context recovery — read FIRST after compaction, updated every cycle |
+| `MISSION.md` | Yes | Role reminder, quality loop, self-identity — read after compaction to remember the mission |
+| `CHECKPOINT.md` | Yes | Context recovery — read FIRST after compaction for current state, updated every cycle |
 | `MANIFEST.md` | Yes | Rules, state machine, git integration, quality bar, skills, self-review loop |
 | `SCOPE.md` | Yes | Project boundaries + scope drift log |
 | `QUEUE.md` | Yes | Pending tasks with state machine, dependencies, git tracking |
 | `INBOX.md` | Yes | HIGH PRIORITY + queued instructions (processed one at a time) |
-| `QA.md` | Yes | Structured questions & answers with IDs, expiry, threading |
+| `QA.md` | Yes | Bidirectional Q&A — both user and agent can ask questions, answer inline |
 | `STATUS.md` | Yes | Heartbeat + progress + health metrics (overwritten) |
 | `COMPLETED.md` | No | Archive for completed tasks (auto-archives at 50+ entries) |
 | `DECISIONS.md` | No | Architecture decisions with timestamps and tags (append only) |

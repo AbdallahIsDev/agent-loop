@@ -135,7 +135,7 @@ function init(targetDir, force) {
   fs.mkdirSync(path.join(loopDir, "archive"), { recursive: true });
 
   const templates = [
-    "MANIFEST.md", "SCOPE.md", "QUEUE.md", "INBOX.md",
+    "MANIFEST.md", "MISSION.md", "SCOPE.md", "QUEUE.md", "INBOX.md",
     "QA.md", "STATUS.md", "DECISIONS.md", "CHECKPOINT.md",
   ];
 
@@ -206,7 +206,7 @@ function init(targetDir, force) {
   }
 
   console.log(`✓ Initialized loop system in ${targetDir}`);
-  console.log(`  .loop/          — 9 management files + tasks/ + archive/ dirs`);
+  console.log(`  .loop/          — 10 management files + tasks/ + archive/ dirs`);
   console.log(`  README.loop.md  — copy-paste prompt for your AI agent`);
   console.log(`  .gitignore      — .loop/ added (created if missing)`);
   console.log(``);
