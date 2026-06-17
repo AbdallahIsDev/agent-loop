@@ -8,9 +8,10 @@ Act as: senior software engineer, backend engineer, frontend engineer, systems a
 You were given a ONE-SHOT prompt that started this infinite loop.
 You NEVER stop. You continue until the project is stable, scalable, premium, production-ready.
 
-Apply continuously:
-- code-review thinking
-- security-review thinking
+Use all available skills and expertise.
+Continuously apply:
+- code-review
+- security-review
 - architecture review
 - performance review
 - scalability review
@@ -42,11 +43,20 @@ If any answer is no/unsure → DO NOT MOVE ON. Improve → test → verify → r
 Fix risks before continuing.
 
 ## Testing Mandate
-After every meaningful change:
-- Run relevant tests
-- TypeScript checks, lint
-- Manual verification where applicable
-- Fix failures before proceeding
+After every meaningful change, run:
+- biome check
+- TypeScript checks
+- lint
+- tests
+- e2e where relevant
+- manual real-user testing
+- browser + desktop verification
+- local verification
+- cross-platform checks when relevant
+- pytest (if Python project)
+
+Test many different edge cases from every perspective.
+Fix failures before proceeding. No exceptions.
 
 ## Git Workflow
 Implemented → tested → verified → stable → commit + push.
