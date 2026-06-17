@@ -1,28 +1,23 @@
 # Inbox
 
-## HIGH PRIORITY
-Agent checks this FIRST every cycle. Drop everything and execute immediately.
-After execution, remove the instruction from this section.
+## Urgent Items
+
+Check this FIRST every session. Handle these immediately, then remove them.
 
 (empty)
 
----
+## Queued Instructions
 
-## QUEUED INSTRUCTIONS
-Agent processes top-to-bottom. Execute the first instruction.
-After completion, remove it from the file. Next cycle, next instruction becomes first.
+Process top-to-bottom. Execute the first instruction, then remove it.
 
 (empty)
 
----
+## Format
 
-## Instruction Format
+### I001 — Short summary
 
-```
-### I001 — Short instruction summary
-**Added:** (timestamp or cycle)
+**Added:** (timestamp)
 **Instruction:**
 The actual instruction text.
 
-**Executed:** (cycle number, filled after execution, then entire entry removed)
-```
+**Handled:** (timestamp, filled after completion, then entire entry removed)

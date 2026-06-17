@@ -1,18 +1,20 @@
 # Status
 
-## Heartbeat
-**Alive:** Yes
-**Cycle:** 0
+## Activity
+
+**Active:** Yes
+**Round:** 0
 **Last Action:** {{DATE}} 00:00
 
 ## Current Work
-**Task:** (none)
-**Status:** Idle
+
+**Item:** (none)
+**State:** Idle
 **Progress:** (nothing in progress)
-**Nested Loop:** No
-**Task Detail File:** (none)
+**Detail File:** (none)
 
 ## Tracker
+
 **Total Completed:** 0
 **Problems Fixed:** 0
 **General Tasks:** 0
@@ -20,7 +22,7 @@
 **Last 5:** (none)
 
 ## Health
-**Avg Cycles/Task:** —
+
+**Avg Rounds/Item:** —
 **Success Rate:** —
-**Compaction Signal:** No
-**Transaction:** (none active)
+**Context Refresh Signal:** No

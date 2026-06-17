@@ -1,13 +1,23 @@
 {
-  "name": "infinity-loop",
-  "version": "1.0.0",
-  "description": "Infinite loop system for AI agents — single API call, never stops, file-based communication",
+  "name": "workspace-cli",
+  "version": "3.0.0",
+  "description": "Project workspace manager for AI-assisted development",
+  "main": "bin/workspace.js",
   "bin": {
-    "loop": "./bin/loop.js"
+    "ws": "bin/workspace.js"
   },
-  "files": [
-    "bin/",
-    "templates/"
+  "scripts": {
+    "test": "node bin/workspace.js --help"
+  },
+  "keywords": [
+    "workspace",
+    "project-management",
+    "ai-assisted",
+    "development"
   ],
-  "license": "MIT"
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
 }

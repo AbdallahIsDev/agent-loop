@@ -2,17 +2,15 @@
 
 Architecture decisions logged here. Append only.
 
----
+## Format
 
-## Decision Format
+### D001 — Short title
 
-```
-### D001 — Short decision title
 **Date:** (date)
-**Cycle:** (cycle number)
+**Round:** (round number)
 **Tag:** architecture | scope-drift | dependency | override
 **Decision:**
 What was decided.
-**Rationale:**
+
+**Reason:**
 Why this decision was made.
-```

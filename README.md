@@ -1,106 +1,76 @@
-# Infinity Loop CLI
+# Workspace Manager CLI
 
-Run AI agents for days on a single API call. No rate limits, no interruptions, no blocking.
+Scaffold a `.workspace/` folder for AI-assisted project management.
 
-## One-Line Install
+## Install
 
-```powershell
-git clone https://github.com/AbdallahIsDev/agent-loop.git
+```bash
+git clone https://github.com/yourusername/workspace-cli.git
+cd workspace-cli
 ```
 
-Then `cd agent-loop` and run:
+Then run:
 
-```powershell
-loop init                             # scaffold in current dir
-loop init --path C:\path\to\project   # scaffold elsewhere
+```bash
+ws init              # scaffold in current dir
+ws init --path C:\path\to\project  # scaffold elsewhere
 ```
 
-**First `loop init` auto-installs globally to `~/.loop/` and adds to PATH.** After that, `loop` works from any directory.
+First `ws init` installs globally to `~/.workspace-cli/` and adds to PATH. After that, `ws` works from any directory.
 
 Cross-platform. One clone. One setup. Zero dependencies beyond Node.js.
 
 ## How It Works
 
-```
-┌──────────────────────────────────────────────────────────┐
-│  Copy README.loop.md → paste into Codex (one API call)   │
-└─────────────────────┬────────────────────────────────────┘
-                      │
-                      ▼
-┌───────────────────────────────────────────────────────────┐
-│                   INFINITE LOOP                           │
-│                                                           │
-│  while true:                                              │
-│    read MISSION.md (role reminder), CHECKPOINT.md (state) │
-│    read MANIFEST.md, SCOPE.md                             │
-│    check INBOX.md HIGH PRIORITY → execute immediately     │
-│    check INBOX.md QUEUED → take first, do it, remove it   │
-│    check QA.md for user answers, expire stale questions   │
-│    take top task from QUEUE.md (deps met)                 │
-│    execute it, test it, self-review it                    │
-│    if git task → commit & push                            │
-│    if problem → remove from QUEUE (verified)              │
-│    if general task → move to COMPLETED.md                 │
-│    rewrite CHECKPOINT.md (under 2000 tokens)              │
-│    rewrite STATUS.md (heartbeat + progress + health)      │
-│    loop forever                                           │
-└───────────────────────────────────────────────────────────┘
-```
+1. Run `ws init` in your project directory
+2. A `.workspace/` folder is created with management files
+3. A `README.ws.md` is created with a prompt you can paste to your AI assistant
+4. The AI reads the files in `.workspace/` to understand the project and pending work
+5. Work is tracked through the todo list — items are processed top to bottom
 
-## The 10 Files
+## The Files
 
-| File | Read Every Cycle | Purpose |
-|------|:-:|---------|
-| `MISSION.md` | Yes | Role reminder, quality loop, self-identity — read after compaction to remember the mission |
-| `CHECKPOINT.md` | Yes | Context recovery — read FIRST after compaction for current state, updated every cycle |
-| `MANIFEST.md` | Yes | Rules, state machine, git integration, quality bar, skills, self-review loop |
-| `SCOPE.md` | Yes | Project boundaries + scope drift log |
-| `QUEUE.md` | Yes | Pending tasks with state machine, dependencies, git tracking |
-| `INBOX.md` | Yes | HIGH PRIORITY + queued instructions (processed one at a time) |
-| `QA.md` | Yes | Bidirectional Q&A — both user and agent can ask questions, answer inline |
-| `STATUS.md` | Yes | Heartbeat + progress + health metrics (overwritten) |
-| `COMPLETED.md` | No | Archive for completed tasks (auto-archives at 50+ entries) |
-| `DECISIONS.md` | No | Architecture decisions with timestamps and tags (append only) |
+| File | Read Every Session | Purpose |
+|------|-------------------|---------|
+| briefing.md | Yes | Role reminder, quality standards — read after context refresh |
+| guide.md | Yes | Workflow rules, file update procedures |
+| boundaries.md | Yes | Project scope, what's in and out |
+| todo.md | Yes | Open items with status, priority, type |
+| inbox.md | Yes | Urgent items that need immediate attention |
+| notes.md | Yes | Current position and context (under 2000 words) |
+| status.md | Yes | Activity tracker, progress, health metrics |
+| questions.md | Yes | Two-way Q&A between you and the AI |
+| done.md | No | Archive of completed items |
+| decisions.md | No | Architecture decisions log (append only) |
 
-## Task Lifecycle
+## Item Lifecycle
 
-| Task Type | When Completed | Why |
-|-----------|---------------|-----|
-| Problem/bug | **Removed** from QUEUE.md | Verified fixed, tested, reviewed. Gone forever. |
-| General task | **Moved** to COMPLETED.md | Archived for future reference. QUEUE stays lean. |
-| Large task | Detail file in `tasks/` | Sub-tasks in mini-loop. Detail file = working memory. |
+| Type | When Complete | Why |
+|------|--------------|-----|
+| Problem/Bug | Removed from todo.md | Verified fixed, tested, reviewed. Gone. |
+| General Task | Moved to done.md | Archived for reference. Todo stays lean. |
+| Large Task | Detail file in tasks/ | Sub-tasks tracked individually. |
 
-## Key Improvements Over v1
+## Key Features
 
-- **Context Recovery** — CHECKPOINT.md is rewritten every cycle (under 2000 tokens). After any context compaction, the agent reads it first and recovers its state.
-- **Task State Machine** — Tasks follow defined transitions (PENDING → IN_PROGRESS → DONE/WAITING/FAILED). Only one task IN_PROGRESS at a time.
-- **Git Integration** — Auto-commit and push after completing tasks in GitHub projects. Skip for non-git tasks.
-- **Self-Review Loop** — After every implementation: verify behavior, architecture fit, hidden risks. Fix before moving on.
-- **Testing & Verification** — Run test commands, verify edge cases, test like a real user before marking DONE.
-- **Structured QA** — Questions have IDs, expiry cycles, priority levels, and context. Stale questions auto-expire.
-- **Skills Integration** — Agent is instructed to use all available skills and tools to complete tasks efficiently.
-- **Memory Management** — COMPLETED.md auto-archives at 50+ entries to `.loop/archive/`. Keeps context lean.
-- **Scope Drift Detection** — SCOPE.md has structured in-scope/out-of-scope sections plus a drift log.
+- **Context Recovery** — notes.md is rewritten every round. After any context refresh, the AI reads it first and recovers its position.
+- **Single Active Item** — Only one item ACTIVE at a time. Focus on completion.
+- **Self-Review** — After every implementation: verify behavior, architecture fit, hidden risks. Fix before moving on.
+- **Structured Q&A** — Questions have IDs, expiry rounds, priority levels, and context.
+- **Memory Management** — done.md auto-archives at 50+ entries to `.workspace/archive/`.
+- **Scope Tracking** — boundaries.md has structured in-scope/out-of-scope sections plus a drift log.
 
-## Inbox — High Priority System
+## Inbox System
 
-**HIGH PRIORITY** — Agent drops everything and executes immediately. Use for "stop current task", "exit nested loop", "fix this critical bug now".
-
-**QUEUED INSTRUCTIONS** — Processed one at a time. Agent takes first, completes it, removes it. Next cycle, next instruction becomes first.
-
-## Investigation Protocol
-
-Every problem must be:
-1. **Reproduced** — confirm it exists
-2. **Verified** — is it real?
-3. **Marked** — VERIFIED REAL / PARTIAL / FALSE POSITIVE / OUTDATED / FIXED
+- **Urgent Items** — AI handles immediately. Use for "stop current task", "fix this critical bug now".
+- **Queued Instructions** — Processed one at a time. AI takes first, completes it, removes it.
 
 ## Quality Standards
 
-- **No scaffolding** — never fake implementations, placeholders, or hacks
-- **No parallel systems** — improve existing architecture
-- **If you find an improvement** — implement it. Hard improvements now prevent bigger problems later.
-- **Test everything** — run test commands, verify edge cases, fix failures before marking done
+- No scaffolding — never fake implementations, placeholders, or hacks
+- No parallel systems — improve existing architecture
+- If you find an improvement — implement it
+- Test everything — run tests, verify edge cases, fix failures before marking done
 
 ## License
 
