@@ -39,7 +39,7 @@ Cross-platform. One clone. One setup. Zero dependencies beyond Node.js.
 | inbox.md | Yes | Urgent items that need immediate attention |
 | notes.md | Yes | Current position and context (under 2000 words) |
 | status.md | Yes | Activity tracker, progress, health metrics |
-| questions.md | Yes | Two-way Q&A between you and the AI |
+| questions.md | Yes | Two-way Q&A between user and the AI |
 | done.md | No | Archive of completed items |
 | decisions.md | No | Architecture decisions log (append only) |
 
@@ -62,7 +62,7 @@ Cross-platform. One clone. One setup. Zero dependencies beyond Node.js.
 
 ## Inbox System
 
-- **Urgent Items** — AI handles immediately. Use for "stop current task", "fix this critical bug now".
+- **Urgent Items** — AI handles immediately. Use for "pause current task", "fix this critical bug now".
 - **Queued Instructions** — Processed one at a time. AI takes first, completes it, removes it.
 
 ## Quality Standards

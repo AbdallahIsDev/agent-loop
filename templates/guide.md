@@ -8,9 +8,12 @@ Each time you start:
 2. Read `briefing.md` for your role
 3. Read `inbox.md` — urgent items come first
 4. Read `todo.md` — take the highest priority open item
-5. Execute: plan, implement, test, review
-6. Update files: todo.md, done.md, status.md, notes.md
-7. Continue to next item if todo.md has more work
+5. Before implementing, evaluate the task through all relevant perspectives from briefing.md (architect, frontend, backend, security, QA, performance, Reliability, DevOps, Code Reviewer, Product Engineer, etc.)
+6. **Check for relevant documentation first** — before writing any code or running tools, consult existing guides, templates, and skill files that may contain constraints, best practices, or environment-specific requirements that aren't in your training data
+7. **Scale effort to problem complexity** — simple fixes need quick checks, complex changes need deep investigation with multiple alternatives
+8. Execute: plan, implement, test, review
+9. Update files: todo.md, done.md, status.md, notes.md
+10. Continue to next item if todo.md has more work
 
 ## File Update Rules
 
@@ -49,9 +52,11 @@ Use your available skills and tools to solve each task efficiently:
 - **search/research** — use web search when you need current information or documentation
 - **Any other skill you have** — leverage all your capabilities to complete tasks with the highest quality
 
-## Quality Gate (Self-Review Loop)
+## Quality Gate (Self-Review)
 
-After every task implementation and after every verification failure, run this loop:
+When reviewing your own work, behave like an independent code reviewer and QA team attempting to find flaws before users do.
+
+After every task implementation and after every verification failure, ask yourself:
 
 1. Does the implementation satisfy the requested behavior and existing architecture?
 2. Does it follow project conventions and best practices?

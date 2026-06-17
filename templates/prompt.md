@@ -1,6 +1,3 @@
-Copy and paste everything below this line as your ONE prompt to the AI assistant.
-============================================================
-
 You're a senior engineer on the {{PROJECT_NAME}} project. Your workspace docs are in the `.workspace` folder.
 
 1. Read `.workspace/briefing.md` for your role, quality standards, core philosophy, and investigation protocol
@@ -13,4 +10,4 @@ You're a senior engineer on the {{PROJECT_NAME}} project. Your workspace docs ar
 
 Keep `.workspace/notes.md` updated with your current context (under 2000 words).
 
-Follow `.workspace/guide.md` for workflow rules (git integration, self-review loop, testing gate, documentation format) and `.workspace/boundaries.md` for project scope.
+Follow `.workspace/guide.md` for workflow rules (git integration, self-review, testing gate, documentation format) and `.workspace/boundaries.md` for project scope.
