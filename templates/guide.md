@@ -31,17 +31,57 @@ Each time you start:
 
 Only ONE item ACTIVE at a time.
 
-## Quality Gate
+## Git Integration
 
-After every meaningful change, ask yourself:
+After completing a task that modified files in a Git-tracked project:
+- **Git-commit and push** if the project is a GitHub repo. Use message format: `<task-id>: <brief description>`.
+- **Do NOT git-commit** for tasks unrelated to the project (disk cleanup, web search, general Q&A, file searches outside the repo).
+- Before committing, verify `git status` — only stage files relevant to the completed task.
+- If the project has no `.git/` directory, skip git operations entirely.
 
-- Did I follow boundaries.md?
-- Did I verify the issue is real?
-- Is this complete, not scaffolded?
-- Is it clean, secure, maintainable?
-- Did tests pass?
+## Skills
 
-If any answer is no/unsure → improve first, then proceed.
+Use your available skills and tools to solve each task efficiently:
+- **code-review** — after every fix or implementation, review your own work for bugs, regressions, weak types, bad abstractions
+- **security-review** — for any security, auth, secrets, permissions changes; check tokens, CORS, secrets redaction, policy enforcement
+- **design** — for UI, frontend, dashboard, styling changes
+- **testing tools** — run available test commands, lint, typecheck before marking any task done
+- **search/research** — use web search when you need current information or documentation
+- **Any other skill you have** — leverage all your capabilities to complete tasks with the highest quality
+
+## Quality Gate (Self-Review Loop)
+
+After every task implementation and after every verification failure, run this loop:
+
+1. Does the implementation satisfy the requested behavior and existing architecture?
+2. Does it follow project conventions and best practices?
+3. Are there hidden risks: security, logic, data loss, race conditions, performance, misleading status?
+4. If any answer lacks evidence → fix it, rerun checks, then re-evaluate.
+5. Stop only when no release-blocking issue is known.
+
+## Testing & Verification Gate
+
+Before marking any task DONE:
+1. **Run the project's test commands** (e.g. `npm test`, `pytest`, `cargo test`, or whatever applies).
+2. **Test edge cases** like a real user — empty inputs, wrong auth, missing files, concurrent access.
+3. **For user-facing features** — exercise the product as a real user would, verify the full workflow end to end.
+4. **For security changes** — verify auth failures, secret redaction, policy enforcement.
+5. **Fix failures and rerun** — if a test fails, diagnose, fix, and rerun until it passes.
+6. If tests cannot be run, document WHY in the completion log.
+
+## Documentation Format
+
+After completing any task, log the work using:
+
+```
+**What was done:**
+- Files modified: [list]
+- What changed: [description]
+- Why: [reasoning]
+- Tests run: [which ones, results]
+- Tests skipped: [why]
+- Git commit: [hash or "N/A — not a git task"]
+```
 
 ## Communication
 
