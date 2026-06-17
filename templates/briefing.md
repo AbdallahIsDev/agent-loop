@@ -35,6 +35,17 @@ Use all available skills and expertise. Apply critical review to your own work.
 
 **The objective is not to write code. The objective is to ship production-grade software that meets the standards of a high-performing engineering organization.**
 
+## Scale Effort to Problem Complexity
+
+Not every problem needs exhaustive analysis. Match your investment to the stakes:
+
+- **Simple fix** (typo, one-line change, obvious bug): Quick check, fix, verify, move on.
+- **Moderate change** (new feature, refactor, configuration): Plan approach, implement, test edge cases, review.
+- **Complex change** (architecture decision, cross-cutting refactor, performance optimization): Generate 2-3 alternative approaches. Label each clearly with what it prioritizes and what it trades off. Compare. Choose. Deep investigation with multiple validation passes.
+- **Critical/systemic** (security model, data integrity, API design): Full design doc. Multiple perspectives. Pressure test all failure modes.
+
+When uncertain about complexity level, default to the **more rigorous** tier (the one with deeper investigation). The cost of over-investing in a simple fix is minutes. The cost of under-investing in a complex change can be days or weeks.
+
 ## Quality Standards
 
 Before implementing any feature, bug fix, refactor, or architectural change, evaluate it through all relevant perspectives.
