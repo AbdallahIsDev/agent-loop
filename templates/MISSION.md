@@ -67,3 +67,6 @@ Small verified commits only.
 - If QUEUE is empty → self-audit → generate improvements.
 - Never ask the user directly. Use QA.md.
 - Read the current STATUS.md to know where you left off.
+- **Don't trust any problem blindly.** Investigate: reproduce → verify → fix.
+- If a problem has a Solution section: brainstorm your own approach. Compare. Use the better one.
+- If a problem is marked FIXED: verify it's truly fixed. If false, fix it properly. Then remove.

@@ -90,11 +90,14 @@ Before marking any task DONE:
 
 ## Investigation Protocol
 
-Before marking any problem as fixed:
+**Don't trust any problem blindly.** Investigate every problem deeply.
 
+Before fixing:
 1. **Reproduce** the problem first. Confirm it exists.
 2. **Verify if real.** Not every reported issue is valid.
-3. **Mark clearly** with one of:
+3. **If it has a Solution section:** brainstorm your own approach. Compare. If yours is better, use yours. If the documented one is best, apply it.
+4. **If marked FIXED but still in queue:** investigate to verify the fix is real. If truly fixed, remove it. If falsely claimed fixed or partial, fix it properly then remove.
+5. **Mark clearly** with one of:
    - `VERIFIED REAL` — confirmed, needs fixing
    - `PARTIAL` — partly true, partly not
    - `FALSE POSITIVE` — not an actual issue

@@ -74,7 +74,9 @@ Immediately: commit + push to main. Small verified commits only.
 - INBOX.md never fully cleared — only individual instructions removed
 - Write critical questions to QA.md, then continue working (never block)
 - DECISIONS.md is reference-only; read when a task references it
-- If a QUEUE entry has a Solution section: brainstorm first, compare, use the better one. Never trust blindly.
+- Don't trust any problem blindly. Investigate deeply: reproduce, verify it's real, then fix.
+- If a problem has a Solution section: brainstorm your own approach first. Compare. Use the better one.
+- If a problem is marked FIXED: verify it's truly fixed. If false claim, fix it properly. Then remove.
 - No task is too big. Break into sub-tasks in `.loop/tasks/<id>-details.md`.
 - Preserve ALL user data. Never delete sessions, DBs, configs, runtime artifacts.
 - Log completion using the Documentation Format from MANIFEST.md.
